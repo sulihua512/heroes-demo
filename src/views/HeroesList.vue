@@ -1,6 +1,6 @@
 <template>
  <div class="list-container">
-  <a href="heroes-form.html" class="btn btn-primary">添加英雄</a>
+  <router-link to="/heroes/add" class="btn btn-primary">添加英雄</router-link>
   <hr />
   <table class="table table-hover">
    <thead>
@@ -18,8 +18,12 @@
      <td>{{item.cTime}}</td>
      <td>
       <button type="button" class="btn btn-success">编辑</button>
+      &nbsp;
       <button type="button" class="btn btn-danger">删除</button>
      </td>
+    </tr>
+    <tr v-if="heroesList.length===0">
+     <td colspan="5">暂无数据</td>
     </tr>
    </tbody>
   </table>

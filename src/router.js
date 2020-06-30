@@ -5,6 +5,8 @@ import HeroesList from './views/HeroesList'
 import ZbList from './views/ZbList'
 import JnList from './views/JnList'
 import VueRouter from 'vue-router'
+import HeroesAdd from './views/HeroesAdd'
+import HeroesEdit from './views/HeroesEdit'
 // 注册路由
 import Vue from 'vue'
 Vue.use(VueRouter)
@@ -12,6 +14,8 @@ Vue.use(VueRouter)
 const routes = [
     { path: '/', redirect: '/heroes' },
     { path: '/heroes', component: HeroesList },
+    { path: '/heroes/add', component: HeroesAdd },
+    { path: '/heroes/edit', component: HeroesEdit },
     { path: '/zblist', component: ZbList },
     { path: '/jnlist', component: JnList }
 ]
