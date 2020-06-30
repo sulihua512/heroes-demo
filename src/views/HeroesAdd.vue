@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
  name: "",
  data() {
@@ -32,7 +32,7 @@ export default {
   //  提交表单数据
   submit() {
    //   使用axios进行添加英雄请求
-   axios
+   this.$http
     .post("http://localhost:3000/heroes", {
      cTime: new Date(),
      ...this.heroesForm

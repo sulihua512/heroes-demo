@@ -31,7 +31,7 @@
 
 <script>
 // 导入axios
-import axios from "axios";
+// import axios from "axios";
 import moment from "moment";
 export default {
  name: "",
@@ -52,7 +52,7 @@ export default {
   //  获取英雄列表数据
   getList() {
    //  通过axios发查询列表请求
-   axios.get("http://localhost:3000/heroes").then(res => {
+   this.$http.get("http://localhost:3000/heroes").then(res => {
     // console.log(res);
     this.heroesList = res.data;
    });
@@ -60,7 +60,7 @@ export default {
   //   删除英雄
   delHeroes(id) {
    if (confirm("确定要删除此英雄吗？")) {
-    axios
+    this.$http
      .delete(`http://localhost:3000/heroes/${id}`)
      .then(() => {
       alert("删除成功");

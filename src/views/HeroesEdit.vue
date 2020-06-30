@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
  name: "",
  data() {
@@ -36,7 +36,7 @@ export default {
   //  获取英雄信息
   getInfo() {
    const id = this.$route.params.id;
-   axios
+   this.$http
     .get(`http://localhost:3000/heroes/${id}`)
     .then(res => {
      this.heroesForm = res.data;
@@ -48,7 +48,7 @@ export default {
   //   提交表单
   update() {
    const id = this.$route.params.id;
-   axios
+   this.$http
     .patch(`http://localhost:3000/heroes/${id}`, this.heroesForm)
     .then(() => {
      // 修改成功
