@@ -15,7 +15,7 @@ const routes = [
     { path: '/', redirect: '/heroes' },
     { path: '/heroes', component: HeroesList },
     { path: '/heroes/add', component: HeroesAdd },
-    { path: '/heroes/edit', component: HeroesEdit },
+    { path: '/heroes/edit/:id', component: HeroesEdit },
     { path: '/zblist', component: ZbList },
     { path: '/jnlist', component: JnList }
 ]

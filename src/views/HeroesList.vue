@@ -17,8 +17,7 @@
      <td>{{item.hGender}}</td>
      <td>{{item.cTime}}</td>
      <td>
-      <button type="button" class="btn btn-success">编辑</button>
-      &nbsp;
+      <router-link :to="'/heroes/edit/'+item.id" type="button" class="btn btn-success">编辑</router-link>&nbsp;
       <button type="button" class="btn btn-danger">删除</button>
      </td>
     </tr>
