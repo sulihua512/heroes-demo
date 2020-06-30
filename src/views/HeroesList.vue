@@ -15,7 +15,7 @@
      <td>{{item.id}}</td>
      <td>{{item.hName}}</td>
      <td>{{item.hGender}}</td>
-     <td>{{item.cTime}}</td>
+     <td>{{item.cTime|formatTime}}</td>
      <td>
       <router-link :to="'/heroes/edit/'+item.id" type="button" class="btn btn-success">编辑</router-link>&nbsp;
       <button type="button" class="btn btn-danger" @click="delHeroes(item.id)">删除</button>
@@ -32,12 +32,18 @@
 <script>
 // 导入axios
 import axios from "axios";
+import moment from "moment";
 export default {
  name: "",
  data() {
   return {
    heroesList: []
   };
+ },
+ filters: {
+  formatTime(value) {
+   return moment(value).format("YYYY-MM-DD HH:mm:ss");
+  }
  },
  created() {
   this.getList();
