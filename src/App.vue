@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <div id="app" class="container">
+  <nav-bar></nav-bar>
+  <div class="col-md-2">
+   <!-- 侧边栏组件 -->
+   <my-aside></my-aside>
   </div>
+  <div class="col-md-10">
+   <router-view></router-view>
+  </div>
+ </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/NavBar.vue";
+import MyAside from "./components/Aside.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+ name: "App",
+ components: { NavBar, MyAside }
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

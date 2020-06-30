@@ -1,0 +1,12 @@
+<template>
+ <div>装备列表</div>
+</template>
+
+<script>
+export default {
+ name: "zb-list"
+};
+</script>
+
+<style>
+</style>
