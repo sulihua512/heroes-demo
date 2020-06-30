@@ -52,7 +52,7 @@ export default {
   //  获取英雄列表数据
   getList() {
    //  通过axios发查询列表请求
-   this.$http.get("http://localhost:3000/heroes").then(res => {
+   this.$http.get("heroes").then(res => {
     // console.log(res);
     this.heroesList = res.data;
    });
@@ -61,7 +61,7 @@ export default {
   delHeroes(id) {
    if (confirm("确定要删除此英雄吗？")) {
     this.$http
-     .delete(`http://localhost:3000/heroes/${id}`)
+     .delete(`heroes/${id}`)
      .then(() => {
       alert("删除成功");
       this.getList();

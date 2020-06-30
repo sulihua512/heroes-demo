@@ -33,13 +33,13 @@ export default {
   submit() {
    //   使用axios进行添加英雄请求
    this.$http
-    .post("http://localhost:3000/heroes", {
+    .post("heroes", {
      cTime: new Date(),
      ...this.heroesForm
     })
     .then(() => {
      // 成功 跳转列表
-     this.$router.push("/heroes");
+     this.$router.push("heroes");
     })
     .catch(err => {
      alert("添加失败", err);

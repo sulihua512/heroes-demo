@@ -37,7 +37,7 @@ export default {
   getInfo() {
    const id = this.$route.params.id;
    this.$http
-    .get(`http://localhost:3000/heroes/${id}`)
+    .get(`heroes/${id}`)
     .then(res => {
      this.heroesForm = res.data;
     })
@@ -49,11 +49,11 @@ export default {
   update() {
    const id = this.$route.params.id;
    this.$http
-    .patch(`http://localhost:3000/heroes/${id}`, this.heroesForm)
+    .patch(`${id}`, this.heroesForm)
     .then(() => {
      // 修改成功
      alert("编辑成功");
-     this.$router.push("/heroes");
+     this.$router.push("heroes");
     })
     .catch(() => {
      alert("编辑失败");
