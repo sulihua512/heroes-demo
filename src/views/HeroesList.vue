@@ -18,7 +18,7 @@
      <td>{{item.cTime}}</td>
      <td>
       <router-link :to="'/heroes/edit/'+item.id" type="button" class="btn btn-success">编辑</router-link>&nbsp;
-      <button type="button" class="btn btn-danger">删除</button>
+      <button type="button" class="btn btn-danger" @click="delHeroes(item.id)">删除</button>
      </td>
     </tr>
     <tr v-if="heroesList.length===0">
@@ -50,6 +50,20 @@ export default {
     // console.log(res);
     this.heroesList = res.data;
    });
+  },
+  //   删除英雄
+  delHeroes(id) {
+   if (confirm("确定要删除此英雄吗？")) {
+    axios
+     .delete(`http://localhost:3000/heroes/${id}`)
+     .then(() => {
+      alert("删除成功");
+      this.getList();
+     })
+     .catch(() => {
+      alert("删除失败");
+     });
+   }
   }
  }
 };
